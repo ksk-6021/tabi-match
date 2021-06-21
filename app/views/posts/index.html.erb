@@ -1,0 +1,164 @@
+<%= render "shared/header" %>
+
+<div class='main'>
+
+  <%# FURIMAが選ばれる3つの理由部分 %>
+  <div class='select-reason-contents'>
+    <h2 class='title'>
+      旅を共有しよう！！
+    </h2>
+    <ul class='reason-lists'>
+      <li class='list'>
+        
+        <h3 class='reason-list-text'>
+          <span class='reason-list-blue-text'>一緒</span>
+          に観光して欲しい
+        </h3>
+        <p class='reason-list-description'>
+          スマホで入力するだけで簡単に出品できる！
+        </p>
+      </li>
+      <li class='list'>
+        
+        <h3 class='reason-list-text'>
+          美味しいご飯を
+          <span class='reason-list-blue-text'>共有</span>
+          したい
+        </h3>
+        <p class='reason-list-description'>
+          めんどくさい入力は必要なく、検索も購入もスムーズ！
+        </p>
+      </li>
+      <li class='list'>
+        
+        <h3 class='reason-list-text'>
+          地元を
+          <span class='reason-list-blue-text'>案内</span>
+          してほしい
+        </h3>
+        <p class='reason-list-description'>
+          10%でお得に出品&購入！
+        </p>
+      </li>
+    </ul>
+  </div>
+  <%# /FURIMAが選ばれる3つの理由部分 %>
+
+  <%# /投稿記事部分%>
+  <div class='post-contents'>
+    <h2 class='title'>新着情報</h2>
+    
+    <ul class='post-lists'>
+     <% @posts.each do |post|%>
+      <li id="posts-top"  class='list'>
+        <%= link_to post_path(post.id) do %>
+        <div class='post-info'>
+          <p class='post-name'>
+            <%= post.date %>/<%= post.place%>
+          </p>
+          <div class='post-price'>
+            <h3><%= post.content %></h3>
+          </div>
+        </div>
+        <div class= 'post-info-user'>
+          <%#= image_tag user.image, class: "post-image" if item.image.attached? %>
+          <div class= 'user-info'>
+            <h3 class='user-info-name'>田中太郎</h3>
+            <p>投稿日 <%= post.created_at %></p>
+          </div>
+        </div>
+        <% end %>
+      </li>
+     <% end %>
+
+     <% if @posts.length == 0 %>
+      <li id="posts-top" class='list'>
+        <%= link_to '#' do %>
+        <div class='post-info'>
+          <p class='post-name'>
+            2020/6/21 東京
+          </p>
+          <h3 class='post-price'>
+            gogogogogogogogogogogogogogogogogogo
+          </h3>
+        </div>
+        <div class= 'post-info-user'>
+          <%= image_tag "unnamed.jpg", class:"post-image" %>
+          <div class= 'user-info'>
+            <h3 class='user-info-name'>田中太郎</h3>
+            <p>投稿日 2021/6/21</p>
+          </div>
+        </div>
+        <% end %>
+      </li>
+
+      <li id="posts-top" class='list'>
+        <%= link_to '#' do %>
+        <div class='post-info'>
+          <p class='post-name'>
+            2020/6/21 東京
+          </p>
+          <h3 class='post-price'>
+            gogogogogogogogogogogogogogogogogogo
+          </h3>
+        </div>
+        <div class= 'post-info-user'>
+          <%= image_tag "unnamed.jpg", class:"post-image" %>
+          <div class= 'user-info'>
+            <h3 class='user-info-name'>田中太郎</h3>
+            <p>投稿日 2021/6/21</p>
+          </div>
+        </div>
+        <% end %>
+      </li>
+
+      <li id="posts-top" class='list'>
+        <%= link_to '#' do %>
+        <div class='post-info'>
+          <p class='post-name'>
+            2020/6/21 東京
+          </p>
+          <h3 class='post-price'>
+            gogogogogogogogogogogogogogogogogogo
+          </h3>
+        </div>
+        <div class= 'post-info-user'>
+          <%= image_tag "unnamed.jpg", class:"post-image" %>
+          <div class= 'user-info'>
+            <h3 class='user-info-name'>田中太郎</h3>
+            <p>投稿日 2021/6/21</p>
+          </div>
+        </div>
+        <% end %>
+      </li>
+
+      <li id="posts-top" class='list'>
+        <%= link_to '#' do %>
+        <div class='post-info'>
+          <p class='post-name'>
+            2020/6月/21日 東京
+          </p>
+          <h3 class='post-price'>
+            gogogogogogogogogogogogogogogogogogo
+          </h3>
+        </div>
+        <div class= 'post-info-user'>
+          <%= image_tag "unnamed.jpg", class:"post-image" %>
+          <div class= 'user-info'>
+            <h3 class='user-info-name'>田中太郎</h3>
+            <p>投稿日 2021/6/21</p>
+          </div>
+        </div>
+        <% end %>
+      </li>
+      
+      
+     <% end %>
+     
+    </ul>
+  </div>
+  <%# /投稿記事部分%>
+  
+  <%= render "shared/footer" %>
+  
+</div>
