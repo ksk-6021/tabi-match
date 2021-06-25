@@ -1,0 +1,63 @@
+<div class='account-page' id='account-page'>
+  <div class='account-page__inner clearfix'>
+    <div class='account-page__inner--left account-page__header'>
+      <h2>編集</h2>
+      <h5>アカウントの編集</h5>
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'%>
+      <%= link_to "チャットページに戻る", :back, class: 'btn'%>
+    </div>
+    <div class='account-page__inner--right user-form'>
+      <%= form_with model: @user, local: true do |f|%>
+        
+        <div class="img-upload">
+         <div class="weight-bold-text">
+           プロフィール画像
+           <span class="indispensable">任意</span>
+         </div>
+         <div class="click-upload">
+           <div class="click-upload-image">
+            <% if @user.avatar.attached? %>
+              <%= image_tag @user.avatar, class:"post-image-upload" %>
+            <% else %>
+              <%= image_tag "unnamed.jpg", class:"post-image-upload" %>
+            <% end %>
+           </div>
+           <p>
+              クリックしてファイルをアップロード
+           </p>
+           <%= f.file_field :avatar, id:"user-image" %>
+         </div>
+        </div>
+        
+        <div class='field'>
+          <div class='field-label'>
+            <%= f.label :name%>
+          </div>
+          <div class='field-input'>
+            <%= f.text_field :name, autofocus: true%>
+          </div>
+        </div>
+        <div class='field'>
+          <div class='field-label'>
+            <%= f.label :email%>
+          </div>
+          <div class='field-input'>
+            <%= f.email_field :email%>
+          </div>
+        </div>
+
+        <div class="user-introduction">
+        <div class="weight-bold-text">
+          自己紹介
+          <span class="indispensable">任意</span>
+        </div>
+        <%= f.text_area :introduction, class:"user-text", id:"item-info", placeholder:"自己紹介" ,rows:"7" ,maxlength:"1000" %>
+        <div class='actions'>
+          <%= f.submit "Update", class: 'btn'%>
+        </div>
+      </div>
+      <% end %>
+    </div>
+
+  </div>
+</div>
