@@ -1,0 +1,62 @@
+.user-show-main{
+  padding: 0 200px;
+  margin-bottom: 100px;
+}
+
+.user-show-info{
+  max-width: 1024px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: flex;
+}
+
+.user-show-profile{
+  min-height: 800px;
+  margin-top: 40px;
+}
+
+.show-profile-header{
+  display: flex;
+}
+
+.profile-image{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid #FFF;
+  }
+
+.profile-main-name{
+  margin: auto;
+  margin-left: 1vw;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.show-profile-introduction{
+  width: 500px;
+  margin-top: 35px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  border: 2px solid lightgray;
+  border-radius: 20px;
+}
+
+.user-show-posts{
+  width: 450px;
+  margin-left: 5vw;
+}
+
+.user-show-posts-header{
+  margin-left: 50px;
+  border-bottom: 1px solid black;
+}
+
+.show-rooms-header{
+  margin-top: 80px;
+}
+
+
+
+

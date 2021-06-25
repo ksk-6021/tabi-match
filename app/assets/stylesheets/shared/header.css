@@ -8,7 +8,7 @@
   flex-direction: column;
 }
 
-.site-tytle {
+.site-title {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -20,19 +20,28 @@
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  padding: 0vh 10vw;
+  padding: 0vh 8vw;
   background-color: #333333;
+}
+
+.post-user-img-header {
+  width: 75px;
+  height: 75px;
+  margin-top: -1vh;
+  margin-bottom: -1vh;
+  border-radius: 50%;
+  border: 3px solid #fff;
 }
 
 .lists-right {
   display: flex;
   list-style: none;
   align-items: flex-end;
-  margin-left: 50vw;
+  margin-left: 60vw;
 }
 
 
-.user-nickname {
+.new-post {
   text-decoration: none;
   margin-right: 3vw;
   color: #fff;

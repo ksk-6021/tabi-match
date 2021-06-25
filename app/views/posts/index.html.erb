@@ -3,40 +3,40 @@
 <div class='main'>
 
   <%# FURIMAが選ばれる3つの理由部分 %>
-  <div class='select-reason-contents'>
+  <div class='top-contents'>
     <h2 class='title'>
       旅を共有しよう！！
     </h2>
-    <ul class='reason-lists'>
+    <ul class='top-contents-lists'>
       <li class='list'>
         
-        <h3 class='reason-list-text'>
-          <span class='reason-list-blue-text'>一緒</span>
+        <h3 class='top-contents-list-text'>
+          <span class='top-contents-list-blue-text'>一緒</span>
           に観光して欲しい
         </h3>
-        <p class='reason-list-description'>
+        <p class='top-contents-list-description'>
           スマホで入力するだけで簡単に出品できる！
         </p>
       </li>
       <li class='list'>
         
-        <h3 class='reason-list-text'>
+        <h3 class='top-contents-list-text'>
           美味しいご飯を
-          <span class='reason-list-blue-text'>共有</span>
+          <span class='top-contents-list-blue-text'>共有</span>
           したい
         </h3>
-        <p class='reason-list-description'>
+        <p class='top-contents-list-description'>
           めんどくさい入力は必要なく、検索も購入もスムーズ！
         </p>
       </li>
       <li class='list'>
         
-        <h3 class='reason-list-text'>
+        <h3 class='top-contents-list-text'>
           地元を
-          <span class='reason-list-blue-text'>案内</span>
+          <span class='top-contents-list-blue-text'>案内</span>
           してほしい
         </h3>
-        <p class='reason-list-description'>
+        <p class='top-contents-list-description'>
           10%でお得に出品&購入！
         </p>
       </li>
@@ -45,9 +45,10 @@
   <%# /FURIMAが選ばれる3つの理由部分 %>
 
   <%# /投稿記事部分%>
+ 
   <div class='post-contents'>
-    <h2 class='title'>新着情報</h2>
-    
+   <div>
+    <h2 class='posts-contents-title'>新着情報</h2>
     <ul class='post-lists'>
      <% @posts.each do |post|%>
       <li id="posts-top"  class='list'>
@@ -79,7 +80,7 @@
             2020/6/21 東京
           </p>
           <h3 class='post-price'>
-            gogogogogogogogogogogogogogogogogogo
+            gogogogogogogogogogogogogogogogogogog
           </h3>
         </div>
         <div class= 'post-info-user'>
@@ -139,7 +140,7 @@
             2020/6月/21日 東京
           </p>
           <h3 class='post-price'>
-            gogogogogogogogogogogogogogogogogogo
+            gogogogogogogogogogogogogogo
           </h3>
         </div>
         <div class= 'post-info-user'>
@@ -152,10 +153,21 @@
         <% end %>
       </li>
       
-      
      <% end %>
-     
     </ul>
+   </div>
+    <% if user_signed_in? %>
+    <div class= 'post-user-info'>
+      <%= image_tag current_user.avatar, class:"post-user-image"%>
+      <p class= 'post-user-text'>
+        <%= current_user.introduction %>
+      </p>
+      <div class='top-user-btn'>
+        <%= link_to "編集", edit_user_path(current_user), method: :get, class: 'user-edit-btn'%>
+        <%= link_to "詳細", user_path(current_user), method: :get, class: 'user-show-btn'%>
+      </div>
+    </div>
+    <% end %>
   </div>
   <%# /投稿記事部分%>
   
