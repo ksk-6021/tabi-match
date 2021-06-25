@@ -7,7 +7,7 @@
 | name               | string | null: false               |
 | email              | string | null: false, unique: true |
 | encrypted_password | string | null: false               |
-| introduction       | string |                           |
+| introduction       | text   |                           |
 
 ### Association
 
@@ -22,7 +22,7 @@
 
 | Column              | Type       | Options                       |
 | ------------------- | ---------- | ----------------------------- |
-| date                | string     | null: false                   |
+| trip_date           | string     | null: false                   |
 | place               | string     | null: false                   |
 | title               | string     | null: false                   |
 | content             | text       | null: false                   |
@@ -106,7 +106,7 @@
 
 | Column         | Type       | Options                       |
 | -------------- | ---------- | ----------------------------- |
-| message        | string     |                               |
+| message        | text       |                               |
 | room           | reference  | null: false, foreign_key: true|
 | user           | references | null: false, foreign_key: true|
 
