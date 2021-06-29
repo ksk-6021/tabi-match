@@ -4,7 +4,7 @@
       <h2>編集</h2>
       <h5>アカウントの編集</h5>
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'%>
-      <%= link_to "チャットページに戻る", :back, class: 'btn'%>
+      <%= link_to "トップページに戻る", :back, class: 'btn'%>
     </div>
     <div class='account-page__inner--right user-form'>
       <%= form_with model: @user, local: true do |f|%>
@@ -53,7 +53,7 @@
         </div>
         <%= f.text_area :introduction, class:"user-text", id:"item-info", placeholder:"自己紹介" ,rows:"7" ,maxlength:"1000" %>
         <div class='actions'>
-          <%= f.submit "Update", class: 'btn'%>
+          <%= f.submit "更新", class: 'btn'%>
         </div>
       </div>
       <% end %>

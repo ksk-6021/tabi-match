@@ -1,0 +1,55 @@
+<%= render "shared/second-header" %>
+
+<div class="posts-show-contents">
+  
+  <div class="posts-show-main">
+    <h2 class="posts-show-title">旅募集内容</h2>
+
+    <%# 旅内容 %>
+    <div class="show-posts">
+      <h3 class="post-show-date">
+        <%= @post.trip_date%>/<%= @post.place %>        
+      </h3>
+  
+      <h1 class="post-show-title">
+        <%= @post.title%>
+      </h1>
+      
+      <div class="post-show-content">
+        <%= safe_join(@post.content.split("\n"),tag(:br)) %>
+        
+      </div>
+    </div>
+    <%# /旅内容 %>
+    <%= link_to user_path(@post.user_id), class:'posts-show-links' do %>
+    <div class='post-show-user'>
+      <% if @post.user.avatar.present? %>
+        <%= image_tag @post.user.avatar, class:"post-show-user-image" %>
+      <% else %>
+        <%= image_tag "unnamed.jpg", class:"post-show-user-image" %>
+      <% end %>
+      <div class= 'post-show-user-info'>
+        <h3 class='post-show-user-name'>
+          <%= @post.user.name%>
+        </h3>
+        <p class='post-show-postdate'>投稿日<%= @post.created_at %></p>
+      </div>
+    </div>
+    <% end %>
+    <%# 下部ボタン %>
+    <% if current_user.id == @post.user_id%>
+    <div class="post-sell-btn-contents">
+      <%= link_to "編集", edit_post_path(@post.id), method: :get, class: 'post-edit-btn'%>
+      <%= link_to "削除", post_path(@post.id), method: :delete, class: 'post-delete-btn'%>
+    </div>
+    <% else %>
+    <div class='post-show-btn'>
+      <%= link_to "コメントする", "#", class: 'post-show-under-btn' %>
+    </div>
+    <% end %>
+    <div class="post-show-btn">
+      <%= link_to 'もどる', root_path, class:"post-show-under-btn" %>
+    </div>
+    <%# /下部ボタン %>
+  </div>
+</div>
