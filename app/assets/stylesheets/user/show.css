@@ -10,9 +10,22 @@
   display: flex;
 }
 
+.user-show-post-info {
+  background-color: #fff;
+  padding: 7px;
+  color: black;
+  border-radius: 20px;
+  height: 150px;
+  border-bottom: 1px solid black;
+}
+
 .user-show-profile{
   min-height: 800px;
   margin-top: 40px;
+}
+
+.show-pofile-main{
+  margin-right: 50px;
 }
 
 .show-profile-header{
@@ -45,12 +58,15 @@
 
 .user-show-posts{
   width: 450px;
-  margin-left: 5vw;
 }
 
 .user-show-posts-header{
   margin-left: 50px;
   border-bottom: 1px solid black;
+}
+
+.user-post-link{
+  text-decoration: none;
 }
 
 .show-rooms-header{
