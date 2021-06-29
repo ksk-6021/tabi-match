@@ -1,0 +1,133 @@
+
+.posts-show-contents {
+  background-color: #f5f5f5;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-width: 500px;
+  height: 100vh;
+}
+
+.posts-show-main {
+  background-color: #FFF;
+  width: 70vw;
+  min-width: 450px;
+  padding: 10vh 15vw;
+}
+
+.posts-show-title {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  color: black;
+}
+
+/* 商品名と商品説明 */
+.show-posts {
+  padding: 2vh 2vw 50px;
+  background-color: #1BB4D3;
+  color: #fff;
+}
+
+.post-show-date{
+  padding-left: 2vw;
+  margin-bottom: 0;
+}
+
+.post-show-title{
+  text-align: center;
+  font-size: 35px;
+  margin-top: 0;
+}
+
+.post-show-content{
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.5;
+
+}
+
+.posts-show-links{
+  text-decoration: none;
+}
+
+.post-show-user{
+  display: flex;
+  margin-bottom: 50px;
+  background-color: #f5f5f5;
+}
+
+.post-show-user-image{
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: 2px solid #FFF;
+}
+
+.post-show-user-info {
+  text-align: left;
+  color: black;
+  margin-left: 7px;
+}
+
+.post-show-user-name{
+  font-size: 20px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.post-show-postdate{
+  margin-top: 0;
+  text-align: left;
+}
+
+/* /商品名と商品説明 */
+
+/* 下部ボタン */
+.post-sell-btn-contents {
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.post-edit-btn{
+  width: 50%;
+  background-color: lightgray;
+  border: 1px solid #aaa;
+  color: black;
+  padding: 15px 10%;
+  text-decoration: none;
+  margin-right: 5px;
+}
+
+.post-delete-btn{
+  width: 50%;
+  background-color: lightgray;
+  border: 1px solid #aaa;
+  color: black;
+  padding: 15px 10%;
+  text-decoration: none;
+}
+
+.post-show-btn{
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.post-show-under-btn{
+  width: 100%;
+  background-color: lightgray;
+  border: 1px solid #aaa;
+  color: black;
+  padding: 15px 10%;
+  text-decoration: black;
+}

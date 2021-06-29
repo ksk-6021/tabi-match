@@ -1,0 +1,44 @@
+<div class="posts-new-contents">
+  
+  <div class="posts-new-main">
+    <h2 class="posts-new-title">旅募集内容</h2>
+    <%= form_with model: @post, local: true do |f| %>
+
+    <%= render 'shared/error_messages', model: f.object %>
+
+    <%# 商品名と商品説明 %>
+    <div class="new-posts">
+      <div class="weight-bold-text">
+        日時
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_field :trip_date, class:"posts-info", id:"post-name", placeholder:"例) 2021/6/25 15:00~  (必須 30字まで)  ", maxlength:"30" %>
+      <div class="weight-bold-text">
+        場所
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_field :place, class:"posts-info", id:"post-name", placeholder:"例) 北海道小樽市の散策  (必須 30字まで) ", maxlength:"30" %>
+      <div class="weight-bold-text">
+        タイトル
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_field :title, class:"posts-info", id:"post-name", placeholder:"例) 1時間程度観光地を一緒に周りませんか？  (必須 40字まで)", maxlength:"40" %>
+      <div class="posts-content">
+        <div class="weight-bold-text">
+          内容
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :content, class:"posts-info", id:"post-info", placeholder:"例) 今は北海道に1人で旅行にきています！現在は小樽市にいるのですが、一緒に観光してくれる方を募集します！約1時間程度できればいいなと考えています！  （必須 1,000文字まで)" ,rows:"20" ,maxlength:"1000" %>
+      </div>
+    </div>
+    <%# /商品名と商品説明 %>
+
+    <%# 下部ボタン %>
+    <div class="sell-btn-contents">
+      <%= f.submit "更新する" ,class:"sell-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+    <%# /下部ボタン %>
+   <% end %>
+  </div>
+</div>
