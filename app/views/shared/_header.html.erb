@@ -7,7 +7,7 @@
   </div>
   <div class='nav'>
     <% if user_signed_in? %>
-     <%= link_to image_tag(current_user.avatar, class: "post-user-img-header"), edit_user_path(current_user) if current_user.avatar.attached? %>
+     <%= link_to image_tag(current_user.avatar, class: "post-user-img-header"), user_path(current_user) if current_user.avatar.attached? %>
     <% end %>
     <ul class='lists-right'>
       <% if user_signed_in? %>
