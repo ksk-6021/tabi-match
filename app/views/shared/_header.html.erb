@@ -1,6 +1,8 @@
 <header class='top-page-header'>
   <div class='site-title'>
-    <h1 class='site-title wrapper'>たびマッチ</h1>
+    <h1 class='site-title wrapper'>
+      <%= link_to "たびマッチ", root_path, class:'site-title-link' %>
+    </h1>
     
   </div>
   <div class='nav'>
@@ -9,7 +11,7 @@
     <% end %>
     <ul class='lists-right'>
       <% if user_signed_in? %>
-        <li><%= link_to '新規募集', "#", class: "new-post" %></li>
+        <li><%= link_to '新規募集', new_post_path, class: "new-post" %></li>
         <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete,  class: "logout" %></li> 
       <% else %>
         <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>

@@ -47,25 +47,27 @@
   <%# /投稿記事部分%>
  
   <div class='post-contents'>
-   <div>
+   <div class='post-contents-main'>
     <h2 class='posts-contents-title'>新着情報</h2>
     <ul class='post-lists'>
      <% @posts.each do |post|%>
       <li id="posts-top"  class='list'>
-        <%= link_to post_path(post.id) do %>
+        <%= link_to post_path(post.id), class: 'posts-lists-link' do %>
         <div class='post-info'>
           <p class='post-name'>
-            <%= post.date %>/<%= post.place%>
+            <%= post.trip_date %>/<%= post.place%>
           </p>
-          <div class='post-price'>
-            <h3><%= post.content %></h3>
+          <div class='post-title'>
+            <%= post.title %>
           </div>
         </div>
         <div class= 'post-info-user'>
-          <%#= image_tag user.image, class: "post-image" if item.image.attached? %>
+          <%= image_tag post.user.avatar, class: "post-image" if post.user.avatar.attached? %>
           <div class= 'user-info'>
-            <h3 class='user-info-name'>田中太郎</h3>
-            <p>投稿日 <%= post.created_at %></p>
+            <h3 class='user-info-name'>
+              <%= post.user.name %>
+            </h3>
+            <p class='user-info-postdate'>投稿日 <%= post.created_at %></p>
           </div>
         </div>
         <% end %>
@@ -81,26 +83,6 @@
           </p>
           <h3 class='post-price'>
             gogogogogogogogogogogogogogogogogogog
-          </h3>
-        </div>
-        <div class= 'post-info-user'>
-          <%= image_tag "unnamed.jpg", class:"post-image" %>
-          <div class= 'user-info'>
-            <h3 class='user-info-name'>田中太郎</h3>
-            <p>投稿日 2021/6/21</p>
-          </div>
-        </div>
-        <% end %>
-      </li>
-
-      <li id="posts-top" class='list'>
-        <%= link_to '#' do %>
-        <div class='post-info'>
-          <p class='post-name'>
-            2020/6/21 東京
-          </p>
-          <h3 class='post-price'>
-            gogogogogogogogogogogogogogogogogogo
           </h3>
         </div>
         <div class= 'post-info-user'>
@@ -158,9 +140,13 @@
    </div>
     <% if user_signed_in? %>
     <div class= 'post-user-info'>
-      <%= image_tag current_user.avatar, class:"post-user-image"%>
+      <% if current_user.avatar.present? %>
+        <%= image_tag current_user.avatar, class:"post-user-image" %>
+      <% else %>
+        <%= image_tag "unnamed.jpg", class:"post-user-image" %>
+      <% end %>
       <p class= 'post-user-text'>
-        <%= current_user.introduction %>
+        <%= safe_join(current_user.introduction.split("\n"),tag(:br)) %>
       </p>
       <div class='top-user-btn'>
         <%= link_to "編集", edit_user_path(current_user), method: :get, class: 'user-edit-btn'%>
