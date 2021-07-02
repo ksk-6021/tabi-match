@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     posts = Post.all.order(created_at: :desc)
-    #@rooms = Room.all
+    @rooms = @user.rooms
     #@messages = Message.all
   end
 
