@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:show, :edit, :update]
-  
+  before_action :user_verification,  only: [:edit, :update]
+
   def show
     @user = User.find(params[:id])
     posts = Post.all.order(created_at: :desc)
@@ -23,5 +24,9 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :email, :introduction, :avatar)
+  end
+
+  def user_verification
+    redirect_to action: :index unless @post.user == current_user
   end
 end
