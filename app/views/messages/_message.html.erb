@@ -1,0 +1,39 @@
+<div class="chat-message">
+   <% if message.user.id == current_user.id %>
+      <div class="chat-message-me">
+         <div class="message-content-me">
+           <%= message.content %>
+         </div>
+         <%= image_tag message.image.variant(resize: '250x250'), class: 'message-image' if message.image.attached? %>
+         <div class="message-date">
+         <!-- 投稿した時刻を出力する -->
+           <%= l message.created_at %>
+         </div>
+      </div>
+   <% else %>
+      <div class="chat-left-message">
+        <div class="left-message-user">
+           <!-- 投稿したユーザー名情報を出力する -->
+          <% @users.each do |user| %>
+          <% next if user.id == current_user.id %>
+             <% if user.avatar.present? %>
+               <%= image_tag user.avatar, class:"chat-message-avatar" %>
+             <% else %>
+               <%= image_tag "unnamed.jpg", class:"chat-message-avatar" %>
+             <% end %>
+          <% end %>
+        </div>
+        
+        <div class='chat-right-message'>
+          <div class="message-content">
+            <%= message.content %>
+           </div>
+           <%= image_tag message.image.variant(resize: '250x250'), class: 'message-image' if message.image.attached? %>
+         <div class="message-date">
+        <!-- 投稿した時刻を出力する -->
+           <%= l message.created_at %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+</div>

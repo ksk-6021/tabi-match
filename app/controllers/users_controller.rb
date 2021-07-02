@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, only: [:edit, :update]
+  before_action :authenticate_user!, only: [:show, :edit, :update]
+  
   def show
     @user = User.find(params[:id])
     posts = Post.all.order(created_at: :desc)
     @rooms = @user.rooms
-    #@messages = Message.all
   end
 
   def edit

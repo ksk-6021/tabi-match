@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'posts#index'
   resources :posts, only: [:index, :new, :create, :show, :edit, :update, :destroy]
   resources :users, only: [:show, :edit, :update]
-  resources :messages, only: [:index]
-  resources :rooms, only: [:new, :create, :show]
+  resources :rooms, only: [:new, :create, :destroy] do
+    resources :messages, only: [:index, :create]
+  end
 end
