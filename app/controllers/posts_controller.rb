@@ -1,7 +1,8 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :post_info, only: [:show, :edit, :update, :destroy]
-
+  before_action :user_verification, only: [:edit, :update, :destroy]
+  
   def index
     @posts = Post.all.order(created_at: :desc)
   end
@@ -45,5 +46,9 @@ class PostsController < ApplicationController
 
   def post_info
     @post = Post.find(params[:id])
+  end
+
+  def user_verification
+    redirect_to action: :index unless @post.user == current_user
   end
 end
