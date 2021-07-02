@@ -25,6 +25,15 @@
 
 .show-post-lists{
   width: 320px;
+  margin-top: 0;
+}
+
+.post-content{
+  padding-bottom: 30px;
+}
+
+.post-content-main{
+  margin-top: 0;
 }
 
 
@@ -103,6 +112,7 @@
 
 .user-show-posts-header{
   margin-left: 50px;
+  margin-bottom: 0;
   border-bottom: 1px solid black;
 }
 

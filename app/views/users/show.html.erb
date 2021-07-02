@@ -33,13 +33,17 @@
             <li id="user-rooms-top"  class='user-room-list'>
               <%= link_to room_messages_path(room.id) do %>
               <div class='user-show-room-main'>
+               <% room.users.each do |user| %>
+               <% unless user.id == current_user.id %>
                <div class='user-show-room-avatar'>
+                <% if user.avatar.present? %>
+                 <%= image_tag user.avatar, class: "room-user-avatar" %>
+                <% else %>
                  <%= image_tag "blank-profile-picture-973460_640.png", class:"room-user-avatar" %>
-               <%#= image_tag @message.user.avatar, class: "user-image" %>
+                <% end %>
                </div>
                <div class='user-show-room-info'>
-                <% room.users.each do |user| %>
-                <% unless user.id == current_user.id %>
+                
                 <div class='user-show-room-header'>
                  <p class='user-show-room-name'> 
                    <%= user.name %>
@@ -48,18 +52,18 @@
                    <%#= @message.created_at %>
                  </p>
                 </div>
-                <% end %>
                 <div class='user-show-room-message'>
                   <p>
                     <%#= @message.content %>
                   </p>
                 </div>
-                <% end %>
+                
               </div>
+              <% end %>
+              <% end %>
              </div>
+             <% end %>
             </li>
-           <% end %>
-          <% end %>
 
            <% if @user.rooms.length == 0 %>
            <li id="user-rooms-top" class='user-room-list'>
@@ -67,6 +71,7 @@
                メッセージを送ってみましょう
              </h2>
            </li>
+           <% end %>
            <% end%>
           <% end %>
         </ul>
@@ -86,8 +91,8 @@
                <p class='post-name'>
                   <%= post.trip_date %>/<%= post.place%>
                </p>
-               <div class='post-price'>
-                 <h3><%= post.title %></h3>
+               <div class='post-content'>
+                 <h3 class='post-content-main'><%= post.title %></h3>
                </div>
              </div>
               <% end %>
