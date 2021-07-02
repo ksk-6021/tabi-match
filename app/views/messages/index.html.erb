@@ -19,7 +19,7 @@
     </div>
     <% end %>
     <div class='chat-delete'>
-      <%= link_to "ルームを削除する", "#", class:'chat-delete-main'%>
+      <%= link_to "ルームを削除する", room_path(@room), method: :delete, class:'chat-delete-main'%>
     </div>
   </div>
 
