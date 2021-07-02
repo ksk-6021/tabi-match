@@ -31,7 +31,7 @@
           <% @rooms.each do |room|%>
             
             <li id="user-rooms-top"  class='user-room-list'>
-              <%= link_to room_path(room.id) do %>
+              <%= link_to room_messages_path(room.id) do %>
               <div class='user-show-room-main'>
                <div class='user-show-room-avatar'>
                  <%= image_tag "blank-profile-picture-973460_640.png", class:"room-user-avatar" %>
