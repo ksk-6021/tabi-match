@@ -1,11 +1,18 @@
 <div class='chat-wrapper'>
   <div class='chat-header'>
+    <% @users.each do |user| %>
+    <% next if user.id == current_user.id %>
     <div class='chat-user-avatar'>
-      <%= image_tag "unnamed.jpg", class:"chat-header-avatar" %>
+        <% if user.avatar.present? %>
+          <%= image_tag user.avatar, class:"chat-header-avatar" %>
+        <% else %>
+          <%= image_tag "unnamed.jpg", class:"chat-header-avatar" %>
+        <% end %>
     </div>
     <div class='chat-user-name'>
-      田中たろう
+       <%= user.name %>
     </div>
+    <% end %>
   </div>
 
   <div class='chat'>
@@ -50,17 +57,19 @@
        </div>
      </div>
    </div>
-
+   <%= form_with model: [@room, @message],local: true do |f| %>
    <div class='chat-messages'>
      <label class="form-image">
        <span class="image-file">画像</span>
-       <input type="file" class="hidden">
+       <%= f.file_field :image, class: "hidden"%>
      </label>
      <div class="chat-messages-input">
-       <input class="form-message" placeholder= "メッセージを作成">
+       <%= f.text_field :content, class: "form-message", placeholder: "メッセージを作成"%>
      </div>
-       <input class="form-submit" type="submit" value="送信">
+     <%= f.submit '送信', class: "form-submit" %>
+     
    </div>
+   <% end %>
   </div>
   
 </div>
