@@ -1,14 +1,14 @@
 <div class="chat-message">
    <% if message.user.id == current_user.id %>
       <div class="chat-message-me">
-           <div class="message-content-me">
-          <%= message.content %>
-           <%= image_tag message.image.variant(resize: '150x150'), class: 'message-image' if message.image.attached? %>
+         <div class="message-content-me">
+           <%= message.content %>
          </div>
-          <div class="message-date">
+         <%= image_tag message.image.variant(resize: '250x250'), class: 'message-image' if message.image.attached? %>
+         <div class="message-date">
          <!-- 投稿した時刻を出力する -->
            <%= l message.created_at %>
-          </div>
+         </div>
       </div>
    <% else %>
       <div class="chat-left-message">
@@ -26,9 +26,9 @@
         
         <div class='chat-right-message'>
           <div class="message-content">
-           <%= message.content %>
-           <%= image_tag message.image.variant(resize: '150x150'), class: 'message-image' if message.image.attached? %>
+            <%= message.content %>
            </div>
+           <%= image_tag message.image.variant(resize: '250x250'), class: 'message-image' if message.image.attached? %>
          <div class="message-date">
         <!-- 投稿した時刻を出力する -->
            <%= l message.created_at %>
