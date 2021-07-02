@@ -1,0 +1,73 @@
+<div class='chat-wrapper'>
+  <div class='chat-header'>
+    <% @users.each do |user| %>
+    <% next if user.id == current_user.id %>
+    <div class='chat-user-avatar'>
+        <% if user.avatar.present? %>
+          <%= image_tag user.avatar, class:"chat-header-avatar" %>
+        <% else %>
+          <%= image_tag "unnamed.jpg", class:"chat-header-avatar" %>
+        <% end %>
+    </div>
+    <div class='chat-user-name'>
+       <%= user.name %>
+    </div>
+    <% end %>
+  </div>
+
+  <div class='chat'>
+    <div class='chat-body'>
+     <div class='chat-main'>
+       <div class="chat-message">
+       <!--if else endで分岐 -->
+        <div class="chat-message-me">
+              <div class="message-content-me">
+                わおお
+              <%#= message.content %>
+              <%#= image_tag message.image.variant(resize: '500x500'), class: 'message-image' if message.image.attached? %>
+             </div>
+             <div class="message-date">
+            <!-- 投稿した時刻を出力する -->
+                 2021/6/29 15:00
+              <%#= l message.created_at %>
+             </div>
+
+         </div>
+            <%#= image_tag message.image.variant(resize: '500x500'), class: 'message-image' if message.image.attached? %>
+
+         <div class="chat-left-message">
+            <div class="left-message-user">
+            <!-- 投稿したユーザー名情報を出力する -->
+             <%= image_tag "unnamed.jpg", class:"chat-message-avatar" %>
+           </div>
+           <div class='chat-right-message'>
+             <div class="message-content">
+               わお
+              <%#= message.content %>
+              <%#= image_tag message.image.variant(resize: '500x500'), class: 'message-image' if message.image.attached? %>
+              </div>
+             <div class="message-date">
+            <!-- 投稿した時刻を出力する -->
+                 2021/6/29 15:00
+              <%#= l message.created_at %>
+             </div>
+           </div>
+         </div>
+        <!--if else endで分岐 -->
+       </div>
+     </div>
+   </div>
+
+   <div class='chat-messages'>
+     <label class="form-image">
+       <span class="image-file">画像</span>
+       <input type="file" class="hidden">
+     </label>
+     <div class="chat-messages-input">
+       <input class="form-message" placeholder= "メッセージを作成">
+     </div>
+       <input class="form-submit" type="submit" value="送信">
+   </div>
+  </div>
+  
+</div>

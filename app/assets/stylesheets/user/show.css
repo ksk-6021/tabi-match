@@ -1,16 +1,20 @@
 .user-show-main{
-  padding: 0 200px;
   margin-bottom: 100px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .user-show-info{
-  max-width: 1024px;
+  width: 70vw;
+  padding: 0 5vw;
   margin-top: 50px;
   margin-bottom: 50px;
   display: flex;
 }
 
 .user-show-post-info {
+  width: 100%;
   background-color: #fff;
   padding: 7px;
   color: black;
@@ -19,12 +23,19 @@
   border-bottom: 1px solid black;
 }
 
-.user-show-profile{
-  min-height: 800px;
-  margin-top: 40px;
+.show-post-lists{
+  width: 320px;
 }
 
-.show-pofile-main{
+
+.user-show-profile{
+  width: 500px;
+  min-height: 800px;
+  margin-top: 40px;
+  margin-right: 60px;
+}
+
+.show-profile-main{
   margin-right: 50px;
 }
 
@@ -41,7 +52,7 @@
 
 .profile-main-name{
   margin: auto;
-  margin-left: 1vw;
+  margin-left: 10px;
   font-size: 30px;
   font-weight: bold;
 }
@@ -56,9 +67,39 @@
   border-radius: 20px;
 }
 
-.user-show-posts{
-  width: 450px;
+
+.show-rooms-header{
+  margin-top: 80px;
 }
+
+.user-show-room-main{
+  display: flex;
+}
+
+.room-user-avatar{
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  margin-right: 10px;
+  border: 2px solid #FFF;
+}
+
+.user-show-room{
+  padding-left: 0;
+}
+
+.user-room-list{
+  border: 1px solid black;
+}
+
+.user-show-room-name{
+  margin-left: 10px;
+}
+
+.user-room-none{
+  margin-left: 10px;
+}
+
 
 .user-show-posts-header{
   margin-left: 50px;
@@ -67,10 +108,6 @@
 
 .user-post-link{
   text-decoration: none;
-}
-
-.show-rooms-header{
-  margin-top: 80px;
 }
 
 
