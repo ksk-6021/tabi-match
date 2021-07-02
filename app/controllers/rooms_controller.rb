@@ -7,10 +7,15 @@ class RoomsController < ApplicationController
   def create
     @room = Room.new(room_params)
     if @room.save
-      redirect_to root_path
+      redirect_to user_path(current_user)
     else
       render :new
     end
+  end
+
+  def show
+    @room = Room.find(params[:id])
+    @users  = @room.users
   end
 
   private
