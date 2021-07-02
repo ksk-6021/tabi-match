@@ -4,17 +4,21 @@
 
   <div class='user-show-info'>
     <div class='user-show-profile'>
-      <div class='show-pofile-main'>
+      <div class='show-profile-main'>
         <div class='show-profile-header'>
-          <div class='profile-main-image'>
+          <% if @user.avatar.present? %>
             <%= image_tag @user.avatar, class: 'profile-image' %>
-          </div>
+          <%end%>
           <div class='profile-main-name'>
            <%= @user.name %>
           </div>
         </div>
         <div class='show-profile-introduction'>
+         <% if @user.avatar.present? %>
           <%= safe_join(@user.introduction.split("\n"),tag(:br)) %>
+         <% else %>
+          <h3>プロフィール</h3>
+         <%end%>
         </div>
       </div>
       
@@ -22,43 +26,50 @@
         <h3 class='show-rooms-header'>
           トーク
         </h3>
-         <%#<ul class='user-show-room'>
+         <ul class='user-show-room'>
           <% if user_signed_in? && current_user.id == @user.id%>
-          <%# @user.rooms.each do |room|%>
-            <%#<li id="user-rooms-top"  class='user-room-list'>
+          <% @rooms.each do |room|%>
+            
+            <li id="user-rooms-top"  class='user-room-list'>
               <%= link_to room_path(room.id) do %>
-             <%#<div class='user-show-room-avatar'>
-                <%= image_tag @message.user.image, class: "user-image" %>
-             <%# </div>
-             <div class='user-show-room-info'>
+              <div class='user-show-room-main'>
+               <div class='user-show-room-avatar'>
+                 <%= image_tag "blank-profile-picture-973460_640.png", class:"room-user-avatar" %>
+               <%#= image_tag @message.user.avatar, class: "user-image" %>
+               </div>
+               <div class='user-show-room-info'>
+                <% room.users.each do |user| %>
+                <% unless user.id == current_user.id %>
                 <div class='user-show-room-header'>
-                 <p class='user-show-room-name'> %>
-                   <%#= @message.user.name %>
-                 <%# </p>
-                  <p class='user-show-room-date'> %>
+                 <p class='user-show-room-name'> 
+                   <%= user.name %>
+                 </p>
+                 <p class='user-show-room-date'> 
                    <%#= @message.created_at %>
-                  <%# </p>
+                 </p>
                 </div>
-               
+                <% end %>
                 <div class='user-show-room-message'>
-                  <p> %>
-                    <%#= @message.message %>
-                  <%# </p>
+                  <p>
+                    <%#= @message.content %>
+                  </p>
                 </div>
+                <% end %>
+              </div>
              </div>
-              <% end %>
-           <%#</li>
+            </li>
+           <% end %>
           <% end %>
 
-           <%# if @user.rooms.length == 0 %>
-           <%#<li id="user-rooms-top" class='user-room-list'>
-             <h2 class='user-room none'>
+           <% if @user.rooms.length == 0 %>
+           <li id="user-rooms-top" class='user-room-list'>
+             <h2 class='user-room-none'>
                メッセージを送ってみましょう
              </h2>
            </li>
            <% end%>
-          <%# end %>
-        <%# </ul> %>
+          <% end %>
+        </ul>
       </div>
     </div> 
 
@@ -85,20 +96,25 @@
 
            <% if @user.posts.length == 0 %>
            <li id="posts-top" class='list'>
-             <%= link_to '#' do %>
+             <%= link_to '#', class:'user-post-link' do %>
               <div class='post-info'>
                 <p class='post-name'>
                   2020/6/21 東京
                </p>
                <h3 class='post-price'>
-                  gogogogogogogogogogogogogogogogogogo
+                  旅を募集してみましょう
                </h3>
              </div>
              <div class= 'post-info-user'>
-               <%= image_tag "unnamed.jpg", class:"post-image" %>
+               <%= image_tag @user.avatar, class: 'post-image' if @user.avatar.attached? %>
+               <% if @user.avatar.nil?%>
+                <%= image_tag "unnamed.jpg", class:"post-image" %>
+               <% end %>
                <div class= 'user-info'>
-                 <h3 class='user-info-name'>田中太郎</h3>
-                  <p>投稿日 2021/6/21</p>
+                 <h3 class='user-info-name'>
+                  <%= @user.name %>
+                 </h3>
+                  <p>投稿日 2020/6/21</p>
                 </div>
               </div>
              <% end %>
