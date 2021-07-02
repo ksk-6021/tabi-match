@@ -18,6 +18,12 @@ class RoomsController < ApplicationController
     @users  = @room.users
   end
 
+  def destroy
+    room = Room.find(params[:id])
+    room.destroy
+    redirect_to user_path(current_user)
+  end
+
   private
 
   def room_params
