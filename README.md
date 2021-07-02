@@ -106,8 +106,8 @@
 
 | Column         | Type       | Options                       |
 | -------------- | ---------- | ----------------------------- |
-| content        | text       |                               |
-| room           | reference  | null: false, foreign_key: true|
+| content        | string     |                               |
+| room           | references | null: false, foreign_key: true|
 | user           | references | null: false, foreign_key: true|
 
 ### Association
