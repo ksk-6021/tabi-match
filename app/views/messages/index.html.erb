@@ -1,18 +1,26 @@
 <div class='chat-wrapper'>
   <div class='chat-header'>
+    <div class='chat-back'>
+     <%= link_to "<", user_path(current_user), method: :get, class:'chat-back-main'%>
+    </div>
     <% @users.each do |user| %>
     <% next if user.id == current_user.id %>
-    <div class='chat-user-avatar'>
-        <% if user.avatar.present? %>
-          <%= image_tag user.avatar, class:"chat-header-avatar" %>
-        <% else %>
-          <%= image_tag "unnamed.jpg", class:"chat-header-avatar" %>
-        <% end %>
-    </div>
+    <div class='chat-header-user-info'>
+      <div class='chat-user-avatar'>
+         <% if user.avatar.present? %>
+            <%= image_tag user.avatar, class:"chat-header-avatar" %>
+          <% else %>
+            <%= image_tag "unnamed.jpg", class:"chat-header-avatar" %>
+          <% end %>
+     </div>
     <div class='chat-user-name'>
        <%= user.name %>
     </div>
+    </div>
     <% end %>
+    <div class='chat-delete'>
+      <%= link_to "ルームを削除する", "#", class:'chat-delete-main'%>
+    </div>
   </div>
 
   <div class='chat'>
