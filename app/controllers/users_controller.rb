@@ -4,7 +4,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     posts = Post.all.order(created_at: :desc)
     @rooms = @user.rooms
-    #@messages = Message.all
   end
 
   def edit
