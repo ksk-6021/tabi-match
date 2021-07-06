@@ -1,6 +1,5 @@
 class RoomsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :show, :destroy]
-  before_action :user_verification,  only: [:destroy]
+  before_action :authenticate_user!, only: [:new, :create, :destroy]
 
   def new
     @room = Room.new
@@ -15,11 +14,6 @@ class RoomsController < ApplicationController
     end
   end
 
-  def show
-    @room = Room.find(params[:id])
-    @users  = @room.users
-  end
-
   def destroy
     room = Room.find(params[:id])
     room.destroy
@@ -32,7 +26,4 @@ class RoomsController < ApplicationController
     params.require(:room).permit(:name, user_ids: [])
   end
 
-  def user_verification
-    redirect_to action: :index unless @post.user == current_user
-  end
 end
