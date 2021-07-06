@@ -39,7 +39,7 @@
   background-color: lightgray;
   border: 1px solid lightgray;
   border-radius: 10px;
-  box-shadow: 0 0 15px rgb(0 0 0 / 15%);
+  box-shadow: 1px 0 3px;
   margin-top: 20px;
 }
 .user-edit-page .field {
@@ -72,7 +72,7 @@
   background-color: #1BB4D3;
   border: #1BB4D3;
   border-radius: 10px;
-  box-shadow: 0 0 15px rgb(0 0 0 / 15%);
+  box-shadow: 5px 0 10px;
   margin-top: 20px;
   float: l;
 }

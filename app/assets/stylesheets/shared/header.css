@@ -25,8 +25,8 @@
   width: 100vw;
   font-size: 18px;
   background-color: #1BB4D3;
-  border: 2px solid lightgray;
-  box-shadow: 15px 0 15px rgb(0 0 0 / 15%);
+  border: 2px solid #1BB4D3;
+  box-shadow: 2px 0 4px;
   padding: 0vh 8vw;
   display: flex;
   flex-wrap: wrap;
@@ -52,7 +52,6 @@
 .new-post {
   color: #fff;
   font-weight: bold;
-  box-shadow: 10px 0 20px rgb(0 0 0 / 20%);
   margin-right: 3vw;
   text-decoration: none;
 }
@@ -61,13 +60,11 @@
 .logout {
   font-weight: bold;
   color: #fff;
-  box-shadow: 0 0 10px rgb(0 0 0 / 15%);
   text-decoration: none;
 }
 
 .login {
   color: #fff;
-  box-shadow: 0 0 10px rgb(0 0 0 / 5%);
   margin-right: 3vw;
   text-decoration: none;
 }
@@ -75,6 +72,5 @@
 .sign-up {
   font-weight: bold;
   color: #fff;
-  box-shadow: 0 0 10px rgb(0 0 0 / 5%);
   text-decoration: none;
 }

@@ -3,8 +3,7 @@
   min-width: 800px;
   height: 90px;
   background-color: #f5f5f5;
-  border-bottom: 1px solid #FFF;
-  box-shadow: 0 0 15px rgb(0 0 0 / 15%);
+  box-shadow: 0 0 10px;
   display: flex;
   align-items: center;
 }
