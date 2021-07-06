@@ -32,5 +32,4 @@ class UsersController < ApplicationController
   def user_verification
     redirect_to root_path unless @user.id == current_user.id
   end
-
 end

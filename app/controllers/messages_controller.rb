@@ -29,4 +29,3 @@ class MessagesController < ApplicationController
     @room = Room.find(params[:room_id])
   end
 end
-
