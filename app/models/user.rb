@@ -12,7 +12,4 @@ class User < ApplicationRecord
 
   has_many :room_users
   has_many :rooms, through: :room_users
-
-  validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i,
-    message: 'is invalid. Include both letters and numbers' }
 end

@@ -6,7 +6,7 @@
 
     <%= render 'shared/error_messages', model: f.object %>
 
-    <%# 商品名と商品説明 %>
+    <%# 募集投稿メイン部分 %>
     <div class="new-posts">
       <div class="weight-bold-text">
         日時
@@ -31,11 +31,11 @@
         <%= f.text_area :content, class:"posts-info", id:"post-info", placeholder:"例) 今は北海道に1人で旅行にきています！現在は小樽市にいるのですが、一緒に観光してくれる方を募集します！約1時間程度できればいいなと考えています！  （必須 1,000文字まで)" ,rows:"20" ,maxlength:"1000" %>
       </div>
     </div>
-    <%# /商品名と商品説明 %>
+    <%# /募集投稿メイン部分 %>
 
     <%# 下部ボタン %>
-    <div class="sell-btn-contents">
-      <%= f.submit "投稿する" ,class:"sell-btn" %>
+    <div class="post-btn-contents">
+      <%= f.submit "投稿する" ,class:"post-btn" %>
       <%=link_to 'もどる', root_path, class:"back-btn" %>
     </div>
     <%# /下部ボタン %>

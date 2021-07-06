@@ -1,3 +1,4 @@
+/* ユーザー詳細画面全体*/
 .user-show-main{
   margin-bottom: 100px;
   display: flex;
@@ -6,42 +7,17 @@
 }
 
 .user-show-info{
-  width: 70vw;
-  padding: 0 5vw;
   margin-top: 50px;
   margin-bottom: 50px;
   display: flex;
 }
+/* /ユーザー詳細画面全体*/
 
-.user-show-post-info {
-  width: 100%;
-  background-color: #fff;
-  padding: 7px;
-  color: black;
-  border-radius: 20px;
-  height: 150px;
-  border-bottom: 1px solid black;
-}
-
-.show-post-lists{
-  width: 320px;
-  margin-top: 0;
-}
-
-.post-content{
-  padding-bottom: 30px;
-}
-
-.post-content-main{
-  margin-top: 0;
-}
-
-
+/* ユーザープロフィール情報*/
 .user-show-profile{
   width: 500px;
   min-height: 800px;
-  margin-top: 40px;
-  margin-right: 60px;
+  margin: 40px 60px 100px 0;
 }
 
 .show-profile-main{
@@ -53,44 +29,34 @@
 }
 
 .profile-image{
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    border: 2px solid #FFF;
-  }
+  width: 80px;
+  height: 80px;
+  border: 2px solid #FFF;
+  border-radius: 50%;
+}
 
 .profile-main-name{
-  margin: auto;
-  margin-left: 10px;
   font-size: 30px;
   font-weight: bold;
+  margin: auto;
+  margin-left: 10px;
 }
 
 .show-profile-introduction{
   width: 500px;
+  border: 2px solid lightgray;
+  border-radius: 20px;
+  box-shadow: 7px 0 10px rgb(0 0 0 / 15%);
   margin-top: 35px;
   padding-top: 20px;
   padding-bottom: 20px;
   padding-left: 10px;
-  border: 2px solid lightgray;
-  border-radius: 20px;
 }
+/* /ユーザープロフィール情報 */
 
-
+/* ユーザールーム画面 */
 .show-rooms-header{
   margin-top: 80px;
-}
-
-.user-show-room-main{
-  display: flex;
-}
-
-.room-user-avatar{
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  margin-right: 10px;
-  border: 2px solid #FFF;
 }
 
 .user-show-room{
@@ -98,11 +64,89 @@
 }
 
 .user-room-list{
-  border: 1px solid black;
+  height: 80px;
+  border-radius: 15px;
+  box-shadow: 7px 0 10px rgb(0 0 0 / 20%);
+  padding-left: 10px;
+  display: flex;
+}
+
+.user-room-link{
+  text-decoration: none;
+}
+
+.user-show-room-main{
+  color: black;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.room-user-avatar{
+  width: 55px;
+  height: 55px;
+  border: 2px solid #FFF;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-show-room-info{
+  margin-left: 7px; 
+}
+
+.user-show-roomuser-name{
+  font-weight: bold;
+  margin-bottom: 0;
 }
 
 .user-show-room-name{
-  margin-left: 10px;
+  margin-top: 0;
+}
+/* /ユーザールーム画面 */
+
+/* ユーザー投稿内容 */
+.user-show-posts{
+  padding-right: 25px;
+}
+
+.user-show-posts-header{
+  border-bottom: 1px solid black;
+  margin-bottom: 0;
+  margin-left: 50px;
+}
+
+.show-post-lists{
+  width: 320px;
+  border: 1px solid #FFF;
+  border-radius: 20px;
+  margin-top: 0;
+}
+
+.post-list{
+  border: 1px solid #FFF;
+  border-radius: 20px;
+  box-shadow: 7px 0 10px rgb(0 0 0 / 15%);
+}
+
+.user-post-link{
+  text-decoration: none;
+}
+
+.user-show-post-info {
+  width: 100%;
+  height: 150px;
+  color: black;
+  background-color: #FFF;
+  border-radius: 20px;
+  padding: 7px;
+}
+
+.post-content{
+  padding-bottom: 30px;
+}
+
+.post-content-main{
+  margin-top: 0;
 }
 
 .user-room-none{
@@ -110,15 +154,9 @@
 }
 
 
-.user-show-posts-header{
-  margin-left: 50px;
-  margin-bottom: 0;
-  border-bottom: 1px solid black;
-}
 
-.user-post-link{
-  text-decoration: none;
-}
+
+
 
 
 

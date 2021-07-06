@@ -21,12 +21,13 @@
       </div>
     </div>
     <%# /旅内容 %>
+
     <%= link_to user_path(@post.user_id), class:'posts-show-links' do %>
     <div class='post-show-user'>
       <% if @post.user.avatar.present? %>
         <%= image_tag @post.user.avatar, class:"post-show-user-image" %>
       <% else %>
-        <%= image_tag "unnamed.jpg", class:"post-show-user-image" %>
+        <%= image_tag "blank-profile-picture-973460_640.png", class:"post-show-user-image" %>
       <% end %>
       <div class= 'post-show-user-info'>
         <h3 class='post-show-user-name'>
@@ -37,18 +38,20 @@
     </div>
     <% end %>
     <%# 下部ボタン %>
+    <% if user_signed_in? %>
     <% if current_user.id == @post.user_id%>
-    <div class="post-sell-btn-contents">
-      <%= link_to "編集", edit_post_path(@post.id), method: :get, class: 'post-edit-btn'%>
-      <%= link_to "削除", post_path(@post.id), method: :delete, class: 'post-delete-btn'%>
+    <div class="post-show-btn-contents">
+      <%= link_to "編集", edit_post_path(@post.id), method: :get, class: 'post-show-upper-btn'%>
+      <%= link_to "削除", post_path(@post.id), method: :delete, class: 'post-show-upper-btn'%>
     </div>
     <% else %>
     <div class='post-show-btn'>
-      <%= link_to "コメントする", new_room_path, class: 'post-show-under-btn' %>
+      <%= link_to "コメントする", new_room_path, class: 'post-show-comment-btn' %>
     </div>
     <% end %>
+    <% end %>
     <div class="post-show-btn">
-      <%= link_to 'もどる', root_path, class:"post-show-under-btn" %>
+      <%= link_to 'もどる', root_path, class:"post-show-back-btn" %>
     </div>
     <%# /下部ボタン %>
   </div>
