@@ -1,51 +1,41 @@
 <%= render "shared/header" %>
 
 <div class='main'>
-
-  <%# FURIMAが選ばれる3つの理由部分 %>
+  <%# たびマッチ説明部分 %>
   <div class='top-contents'>
-    <h2 class='title'>
-      旅を共有しよう！！
-    </h2>
-    <ul class='top-contents-lists'>
-      <li class='list'>
-        
-        <h3 class='top-contents-list-text'>
-          <span class='top-contents-list-blue-text'>一緒</span>
-          に観光して欲しい
-        </h3>
-        <p class='top-contents-list-description'>
-          スマホで入力するだけで簡単に出品できる！
-        </p>
-      </li>
-      <li class='list'>
-        
-        <h3 class='top-contents-list-text'>
-          美味しいご飯を
-          <span class='top-contents-list-blue-text'>共有</span>
-          したい
-        </h3>
-        <p class='top-contents-list-description'>
-          めんどくさい入力は必要なく、検索も購入もスムーズ！
-        </p>
-      </li>
-      <li class='list'>
-        
-        <h3 class='top-contents-list-text'>
-          地元を
-          <span class='top-contents-list-blue-text'>案内</span>
-          してほしい
-        </h3>
-        <p class='top-contents-list-description'>
-          10%でお得に出品&購入！
-        </p>
-      </li>
-    </ul>
+     <h2 class='title'>
+       旅を共有しよう！！
+      </h2>
+     <ul class='top-contents-lists'>
+       <li class='list'>
+          <%= image_tag "young-people-3575167_640.jpg", class:'top-image'%>
+          <h3 class='top-contents-list-text'>
+           <span class='top-contents-list-blue-text'>一緒</span>
+           に観光！
+         </h3>
+       </li>
+       <li class='list'>
+          <%= image_tag "pizza-3007395_640.jpg", class:'top-image'%>
+          <h3 class='top-contents-list-text'>
+           美味しいご飯を
+           <span class='top-contents-list-blue-text'>共有</span>
+           ！
+         </h3>
+        </li>
+       <li class='list'>
+         <%= image_tag "autumn-walk-1792812_640.jpg", class:'top-image'%>
+         <h3 class='top-contents-list-text'>
+           地元を
+           <span class='top-contents-list-blue-text'>案内</span>
+            ！
+         </h3>
+       </li>
+     </ul>
+    </div>
   </div>
-  <%# /FURIMAが選ばれる3つの理由部分 %>
+  <%# /たびマッチ説明部分 %>
 
   <%# /投稿記事部分%>
- 
   <div class='post-contents'>
    <div class='post-contents-main'>
     <h2 class='posts-contents-title'>新着情報</h2>
@@ -86,9 +76,9 @@
           </h3>
         </div>
         <div class= 'post-info-user'>
-          <%= image_tag "unnamed.jpg", class:"post-image" %>
+          <%= image_tag "blank-profile-picture-973460_640.png", class:"post-image" %>
           <div class= 'user-info'>
-            <h3 class='user-info-name'>田中太郎</h3>
+            <h3 class='user-info-name'>旅太郎</h3>
             <p>投稿日 2021/6/21</p>
           </div>
         </div>
@@ -106,7 +96,7 @@
           <%= safe_join(current_user.introduction.split("\n"),tag(:br)) %>
         </p>
       <% else %>
-        <%= image_tag "unnamed.jpg", class:"post-user-image" %>
+        <%= image_tag "blank-profile-picture-973460_640.png", class:"post-user-image" %>
       <% end %>
       <div class='top-user-btn'>
         <%= link_to "編集", edit_user_path(current_user), method: :get, class: 'user-edit-btn'%>

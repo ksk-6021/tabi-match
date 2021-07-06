@@ -1,14 +1,14 @@
-<div class='account-page' id='account-page'>
-  <div class='account-page__inner clearfix'>
-    <div class='account-page__inner--left account-page__header'>
+<div class='user-edit-page' id='account-page'>
+  <div class='user-edit-page-body'>
+    <div class='user-edit-page-body-left user-edit-page-header'>
       <h2>編集</h2>
       <h5>アカウントの編集</h5>
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'%>
       <%= link_to "トップページに戻る", :back, class: 'btn'%>
     </div>
-    <div class='account-page__inner--right user-form'>
+    <div class='user-edit-page-body-right user-form'>
       <%= form_with model: @user, local: true do |f|%>
-        
+        <%= render 'shared/error_messages', model: f.object %>
         <div class="img-upload">
          <div class="weight-bold-text">
            プロフィール画像
@@ -19,7 +19,7 @@
             <% if @user.avatar.attached? %>
               <%= image_tag @user.avatar, class:"post-image-upload" %>
             <% else %>
-              <%= image_tag "unnamed.jpg", class:"post-image-upload" %>
+              <%= image_tag "blank-profile-picture-973460_640.png", class:"post-image-upload" %>
             <% end %>
            </div>
            <p>
