@@ -1,7 +1,7 @@
 class MessagesController < ApplicationController
   before_action :authenticate_user!, only: [:index, :create]
   before_action :room_info, only: [:index, :create]
-  
+
   def index
     @message = Message.new
     @users = @room.users
@@ -29,4 +29,3 @@ class MessagesController < ApplicationController
     @room = Room.find(params[:room_id])
   end
 end
-

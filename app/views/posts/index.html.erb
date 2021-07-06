@@ -93,7 +93,7 @@
       <% if current_user.avatar.present? && current_user.introduction.present?%>
         <%= image_tag current_user.avatar, class:"post-user-image" %>
         <p class= 'post-user-text'>
-          <%= safe_join(current_user.introduction.split("\n"),tag(:br)) %>
+          <%= safe_join(current_user.introduction.truncate(100).split("\n"),tag(:br)) %>
         </p>
       <% else %>
         <%= image_tag "blank-profile-picture-973460_640.png", class:"post-user-image" %>
