@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update]
-  before_action :user_info,  only: [:show, :edit, :update]
-  before_action :user_verification,  only: [:edit, :update]
+  before_action :user_info, only: [:show, :edit, :update]
+  before_action :user_verification, only: [:edit, :update]
 
   def show
     posts = Post.all.order(created_at: :desc)
@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
   def edit
   end
-  
+
   def update
     if @user.update!(user_params)
       redirect_to root_path
@@ -32,5 +32,4 @@ class UsersController < ApplicationController
   def user_verification
     redirect_to root_path unless @user.id == current_user.id
   end
-
 end
