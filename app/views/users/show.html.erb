@@ -23,15 +23,16 @@
       </div>
       
       <div class='user-show-rooms'>
+        <% if user_signed_in? && current_user.id == @user.id%>
         <h3 class='show-rooms-header'>
           トーク
         </h3>
          <ul class='user-show-room'>
-          <% if user_signed_in? && current_user.id == @user.id%>
+          
           <% @rooms.each do |room|%>
-            
+            <%= link_to room_messages_path(room.id), class:'user-room-link' do %>
             <li id="user-rooms-top"  class='user-room-list'>
-              <%= link_to room_messages_path(room.id) do %>
+              
               <div class='user-show-room-main'>
                <% room.users.each do |user| %>
                <% unless user.id == current_user.id %>
@@ -45,26 +46,19 @@
                <div class='user-show-room-info'>
                 
                 <div class='user-show-room-header'>
-                 <p class='user-show-room-name'> 
+                 <p class='user-show-roomuser-name'> 
                    <%= user.name %>
                  </p>
-                 <p class='user-show-room-date'> 
-                   <%#= @message.created_at %>
+                 <p class='user-show-room-name'> 
+                   <%= room.name %>
                  </p>
                 </div>
-                <div class='user-show-room-message'>
-                  <p>
-                    <%#= @message.content %>
-                  </p>
-                </div>
-                
               </div>
               <% end %>
               <% end %>
              </div>
-             <% end %>
             </li>
-
+             <% end %>
            <% if @user.rooms.length == 0 %>
            <li id="user-rooms-top" class='user-room-list'>
              <h2 class='user-room-none'>
@@ -73,8 +67,8 @@
            </li>
            <% end %>
            <% end%>
-          <% end %>
         </ul>
+        <% end %>
       </div>
     </div> 
 
@@ -85,7 +79,7 @@
         </h2>
         <ul class='show-post-lists'>
           <% @user.posts.each do |post|%>
-            <li id="posts-top"  class='list'>
+            <li id="posts-top"  class='post-list'>
               <%= link_to post_path(post.id), class:'user-post-link' do %>
              <div class='user-show-post-info'>
                <p class='post-name'>
@@ -100,7 +94,7 @@
           <% end %>
 
            <% if @user.posts.length == 0 %>
-           <li id="posts-top" class='list'>
+           <li id="posts-top" class='post-list'>
              <%= link_to '#', class:'user-post-link' do %>
               <div class='post-info'>
                 <p class='post-name'>
@@ -113,7 +107,7 @@
              <div class= 'post-info-user'>
                <%= image_tag @user.avatar, class: 'post-image' if @user.avatar.attached? %>
                <% if @user.avatar.nil?%>
-                <%= image_tag "unnamed.jpg", class:"post-image" %>
+                <%= image_tag "blank-profile-picture-973460_640.png", class:"post-image" %>
                <% end %>
                <div class= 'user-info'>
                  <h3 class='user-info-name'>
