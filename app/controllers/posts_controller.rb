@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :post_info, only: [:show, :edit, :update, :destroy]
   before_action :user_verification, only: [:edit, :update, :destroy]
-  
+
   def index
     @posts = Post.all.order(created_at: :desc)
   end
@@ -33,13 +33,14 @@ class PostsController < ApplicationController
       render :edit
     end
   end
-  
+
   def destroy
     @post.destroy
     redirect_to root_path
   end
 
   private
+
   def post_params
     params.require(:post).permit(:trip_date, :place, :title, :content).merge(user_id: current_user.id)
   end
