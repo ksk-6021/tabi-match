@@ -1,14 +1,18 @@
+/* メッセージ画面全体 */
 .chat-wrapper{
+  min-width: 500px;
   background-color: #f5f5f5;
   display: flex;
   align-items: center;
   flex-direction: column;
-  min-width: 500px;
 }
+/* /メッセージ画面全体 */
 
+/* メッセージヘッダー部分 */
 .chat-header{
   width: 100%;
   height: 150px;
+  padding: 0 40px 0 70px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -18,7 +22,7 @@
   width: 55px;
   height: 55px;
   font-size: 35px;
-  background-color: #38AEF0;
+  background-color: #1bb4d3;
   margin-left: 50px;
   border-radius: 50%;
 }
@@ -31,11 +35,11 @@
   text-decoration: none;
 }
 .chat-header-user-info{
+  margin-left: 120px;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  margin-left: 120px;
 }
 
 .chat-user-avatar{
@@ -53,30 +57,32 @@
 }
 
 .chat-delete{
-  background-color: #38AEF0;
+  height: 30%;
+  background-color: #1BB4D3;
   margin-right: 40px;
   border-radius: 20px;
-  height: 30%;
   display: flex;
   align-items: center;
 }
 
 .chat-delete-main{
-  font-size: 18px;
-  text-decoration: none;
   color: #fff;
+  font-size: 18px;
   font-weight: bold;
+  text-decoration: none;
 }
+/* /メッセージヘッダー部分 */
 
+/* メッセージメイン画面 */
 .chat{
   background-color: #fff;
 }
 
 .chat-body{
-  background-color: #fff;
   width: 70vw;
   height: calc(100vh - 150px - 100px);
   min-width: 450px;
+  background-color: #fff;
   padding: 10vh 15vw;
   overflow: scroll;
 }
@@ -92,8 +98,8 @@
 }
 
 .message-content-me{
-  color: #434a54;
   font-size: 20px;
+  color: #434a54;
   background-color: #DDDDDD;
   border-radius: 20px 20px 0 20px;
   padding-left: 8px;
@@ -105,8 +111,8 @@
 }
 
 .left-message-user{
-  color: #434a54;
   font-size: 16px;
+  color: #434a54;
   margin-right: 20px;
 }
 
@@ -124,8 +130,8 @@
 }
 
 .message-content{
-  color: #434a54;
   font-size: 20px;
+  color: #434a54;
   background-color: #DDDDDD;
   border-radius: 20px 20px 20px 0;
   padding-left: 8px;
@@ -133,11 +139,12 @@
 }
 
 .message-date{
-  color: #999;
   font-size: 12px;
+  color: #999;
 }
+/* /メッセージメイン画面 */
 
-
+/* メッセージ送信画面 */
 .chat-messages{
   height: 100px;
   padding: 20px 40px;
@@ -146,16 +153,16 @@
 }
 
 .form-image {
-  font-size: 16px;
-  background-color: #38AEF0;
-  color: white;
-  padding: 10px;
   width: 60px;
+  font-size: 16px;
+  color: white;
+  background-color: #1BB4D3;
+  border-radius: 20px;
   margin: 0 10px 8px;
-  text-align: center;
+  padding: 10px;
   display: flex;
   align-items: center;
-  border-radius: 20px;
+  text-align: center;
 }
 
 .hidden {
@@ -163,29 +170,30 @@
 }
 
 .chat-messages-input{
-  background-color: white;
   width: 100%;
+  background-color: #FFF;
   text-align: center;
 }
 
 .form-message{
-  border: none;
-  height: 50px;
   width: 90%;
-  padding-left: 10px;
-  border-radius: 20px;
+  height: 50px;
   background-color: #DDDDDD;
+  border: none;
+  border-radius: 20px;
+  padding-left: 10px;
 }
 
 .form-submit{
-  background-color: #38AEF0;
-  border: none;
-  color: white;
-  font-size: 16px;
   height: 50px;
-  padding: 0 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #1BB4D3;
+  border: none;
   border-radius: 20px;
+  padding: 0 20px;
 }
+/* /メッセージ送信画面 */
 
 
 

@@ -3,72 +3,70 @@
 }
 
 
-/* FURIMAが選ばれる3つの理由部分 */
+/* たびマッチ説明部分 */
 .top-contents {
-  padding: 5vh 15vw;
-  /*border: 100px solid black;*/
+  border: 5px solid #FFF;
+  box-shadow: 0 0 15px rgb(0 0 0 / 15%);
+  margin-bottom: 30px;
+  padding: 5vh 10vw;
 }
 
 .top-contents>.title {
-  text-align: left;
   font-size: 3.5vh;
-  font-weight: bold;
   margin-bottom: 5vh;
-}
-
-.top-contents>.title::after {
-  content: '';
-  width: 70px;
-  height: 4px;
-  background-color: #3ccace;
-  bottom: -10px;
-  left: 10%;
-  transform: translateX(-50%);
+  text-align: left;
+  font-weight: bold;
 }
 
 .top-contents-lists {
+  padding-top: 10px;
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
 }
 
 .top-contents-lists>.list {
-  width: 33vh;
+  background-color: #FFF;
+  margin-right: 35px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #FFF;
-  height: 30vh;
+}
+
+.top-image{
+  width: 380px;
+  height: 250px;
+  border: 1px solid none;
+  border-radius: 15px;
+  box-shadow: 10px 0 25px rgb(0 0 0 / 35%);
 }
 
 .top-contents-list-text {
-  font-weight: bold;
   font-size: 20px;
+  font-weight: bold;
+  border-radius: 6px;
+  box-shadow: 10px 0 10px rgb(0 0 0 / 30%);
 }
 
 .top-contents-list-blue-text {
   color: #3ccace;
 }
 
-.top-contents-list-description {
-  font-size: 18px;
-  margin-top: 10px;
-}
+/* /たびマッチ説明部分 */
 
-/* //FURIMAが選ばれる3つの理由部分 */
-
-/* //投稿部分 */
+/* 投稿全体部分 */
 .post-contents {
   background-color: #FFF;
-  display: flex;
-  padding: 0 180px;
+  border: 1px solid #FFF;
   margin-bottom: 200px;
-  margin-right: 50px;
+  padding: 0 10vw;
+  display: flex;
 }
+/* /投稿全体部分 */
 
+/* 投稿新着情報部分 */
 .post-contents-main{
-  margin-right: 60px;
-  width: 750px;
+  margin-right: 70px;
+  width: 850px;
 }
 
 .posts-contents-title {
@@ -76,16 +74,16 @@
   font-size: 20px;
   line-height: 1.4;
   font-weight: bold;
+  border-bottom: 1px solid black;
   margin-left: 65px;
   padding-bottom: 10px;
-  border-bottom: 1px solid black;
 }
 
 
 .post-lists {
+  margin-bottom: 150px;
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 150px;
 }
 
 ul {
@@ -104,21 +102,19 @@ ul {
 .post-image{
   width: 55px;
   height: 55px;
-  border-radius: 50%;
-  margin-top: -7px;
-  margin-right: 10px;
-  margin-left: 25px;
-  margin-bottom: 30px;
   border: 2px solid #FFF;
+  border-radius: 50%;
+  margin: -7px 10px 30px 25px;
 }
 
 .post-info {
-  background-color: #FFF;
-  padding: 10px 20px;
+  height: 150px;
   color: #FFF;
   background-color: #1BB4D3;
+  border: 1px solid none;
   border-radius: 20px 20px 0 0;
-  height: 150px;
+  box-shadow: 10px 0 20px rgb(0 0 0 / 20%);
+  padding: 10px 20px;
 }
 
 .post-name {
@@ -134,16 +130,18 @@ ul {
 }
 
 .post-info-user {
+  height: 80px;
   background-color: #f5f5f5;
+  border: 1px solid none;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 0 10px rgb(0 0 0 / 20%);
   display: flex;
   align-items: center;
-  border-radius: 0 0 20px 20px;
-  height: 80px;
 }
 
 .user-info {
-  text-align: left;
   color: black;
+  text-align: left;
 }
 
 .user-info-name {
@@ -155,67 +153,59 @@ ul {
   margin-top: 0;
   padding-bottom: 3px;
 }
+/* /投稿新着情報部分 */
 
+/* ユーザー表示部分 */
 .post-user-info {
-  width: 330px;
+  width: 340px;
   height: 430px;
-  margin-top: 90px;
+  border: 2px solid #FFF;
   border-radius: 20px;
-  border: 3px solid black;
+  box-shadow: 0 0 15px rgb(0 0 0 / 15%);
+  margin-top: 90px;
   padding: 5px 30px 15px;
 }
 
 .post-user-image {
   width: 200px;
   height: 200px;
-  border-radius: 50%;
   border: 2px solid #FFF;
-  margin-left: 30px;
+  border-radius: 50%;
   margin-right: 30px;
+  margin-left: 36px;
 }
 
 .post-user-text {
-  text-align: start;
   font-size: 15px;
   line-height: 1;
+  text-align: start;
 }
 
 .top-user-btn{
+  margin-top: 30px;
   display: flex;
   justify-content: center;
 }
 
 .user-edit-btn {
   width: 50px;
+  color: black;
+  border: 1px solid lightgray;
+  box-shadow: 5px 0 15px rgb(0 0 0 / 25%);
+  border-radius: 10px;
+  margin-right: 10px;
   margin-bottom: 3px;
   padding-left: 7px;
-  color: black;
-  border: 1px solid black;
-  border-radius: 10px;
 }
 
 .user-show-btn{
   width: 50px;
+  color: black;
+  border: 1px solid lightgray;
+  box-shadow: 5px 0 15px rgb(0 0 0 / 25%);
+  border-radius: 10px;
   margin-bottom: 3px;
   padding-left: 7px;
-  color: black;
-  border: 1px solid black;
-  border-radius: 10px;
 }
-/*.star-btn {
-  display: flex;
-  align-items: center;
-}
-
-.star-icon {
-  height: 2vh;
-  width: 2vh;
-  margin-right: 0.5vw;
-}
-
-.star-count {
-  font-size: 2vh;
-}
-/* //投稿部分 */
-
+/* /ユーザー表示部分 */
 
