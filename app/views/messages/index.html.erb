@@ -30,6 +30,7 @@
     
     <%= form_with model: [@room, @message],local: true do |f| %>
     <div class='chat-messages'>
+      <div id="image-list"></div>
       <label class="form-image">
         <span class="image-file">画像</span>
         <%= f.file_field :image, class: "hidden"%>
