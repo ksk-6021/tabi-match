@@ -102,15 +102,16 @@
   color: #434a54;
   background-color: #DDDDDD;
   border-radius: 20px 20px 0 20px;
+  margin-bottom: 5px;
   padding-left: 8px;
   padding-right: 8px;
 }
 
-.chat-left-message{
+.chat-message-other{
   display: flex;
 }
 
-.left-message-user{
+.chat-message-user{
   font-size: 16px;
   color: #434a54;
   margin-right: 20px;
@@ -134,6 +135,7 @@
   color: #434a54;
   background-color: #DDDDDD;
   border-radius: 20px 20px 20px 0;
+  margin-bottom: 5px;
   padding-left: 8px;
   padding-right: 8px;
 }

@@ -2,7 +2,7 @@
    <% if message.user.id == current_user.id %>
       <div class="chat-message-me">
          <div class="message-content-me">
-           <%= message.content %>
+           <%= message.content if message.content.present? %>
          </div>
          <%= image_tag message.image.variant(resize: '250x250'), class: 'message-image' if message.image.attached? %>
          <div class="message-date">
@@ -11,8 +11,8 @@
          </div>
       </div>
    <% else %>
-      <div class="chat-left-message">
-        <div class="left-message-user">
+      <div class="chat-message-other">
+        <div class="chat-message-user">
            <!-- 投稿したユーザー名情報を出力する -->
           <% @users.each do |user| %>
           <% next if user.id == current_user.id %>
@@ -26,11 +26,10 @@
         
         <div class='chat-right-message'>
           <div class="message-content">
-            <%= message.content %>
-           </div>
-           <%= image_tag message.image.variant(resize: '250x250'), class: 'message-image' if message.image.attached? %>
-         <div class="message-date">
-        <!-- 投稿した時刻を出力する -->
+             <%= message.content if message.content.present? %>
+          </div>
+          <%= image_tag message.image.variant(resize: '250x250') if message.image.attached? %>
+          <div class="message-date">
            <%= l message.created_at %>
           </div>
         </div>
