@@ -66,12 +66,12 @@
 
      <% if @posts.length == 0 %>
       <li id="posts-top" class='list'>
-        <%= link_to '#' do %>
+        <%= link_to '#', class: 'posts-lists-link' do %>
         <div class='post-info'>
           <p class='post-name'>
             2020/6/21 東京
           </p>
-          <h3 class='post-price'>
+          <h3 class='post-title'>
             投稿してみましょう！
           </h3>
         </div>

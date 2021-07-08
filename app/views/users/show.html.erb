@@ -96,26 +96,14 @@
            <% if @user.posts.length == 0 %>
            <li id="posts-top" class='post-list'>
              <%= link_to '#', class:'user-post-link' do %>
-              <div class='post-info'>
-                <p class='post-name'>
-                  2020/6/21 東京
+              <div class='user-show-post-info'>
+               <p class='post-name'>
+                  2021/7/7/東京
                </p>
-               <h3 class='post-price'>
-                  旅を募集してみましょう
-               </h3>
+               <div class='post-content'>
+                 <h3 class='post-content-main'>旅を募集してみましょう</h3>
+               </div>
              </div>
-             <div class= 'post-info-user'>
-               <%= image_tag @user.avatar, class: 'post-image' if @user.avatar.attached? %>
-               <% if @user.avatar.nil?%>
-                <%= image_tag "blank-profile-picture-973460_640.png", class:"post-image" %>
-               <% end %>
-               <div class= 'user-info'>
-                 <h3 class='user-info-name'>
-                  <%= @user.name %>
-                 </h3>
-                  <p>投稿日 2020/6/21</p>
-                </div>
-              </div>
              <% end %>
            </li>
            <% end%>
